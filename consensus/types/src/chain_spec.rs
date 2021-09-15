@@ -3,7 +3,6 @@ use eth2_serde_utils::quoted_u64::MaybeQuoted;
 use int_to_bytes::int_to_bytes4;
 use serde::{Deserializer, Serialize, Serializer};
 use serde_derive::Deserialize;
-use serde_utils::quoted_u64::MaybeQuoted;
 use std::fs::File;
 use std::path::Path;
 use tree_hash::TreeHash;
