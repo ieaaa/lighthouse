@@ -349,6 +349,8 @@ impl<TSpec: EthSpec> PeerManager<TSpec> {
             .map(|peer_info| peer_info.client.kind.clone())
         {
             metrics::inc_gauge_vec(&metrics::PEERS_PER_CLIENT, &[&kind.to_string()]);
+        } else {
+            metrics::inc_gauge_vec(&metrics::PEERS_PER_CLIENT, &[&self::client::ClientKind::Unknown.to_string()]);
         }
 
         // Check to make sure the peer is not supposed to be banned
